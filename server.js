@@ -511,8 +511,7 @@ function formatDate(dateString) {
 
 
 const PORT = process.env.PORT || 8081;
-const URL= 'https://puffy-burst-production.up.railway.app'
-app.listen(URL, () => {
+app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
