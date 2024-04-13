@@ -5,6 +5,8 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import { MongoClient } from 'mongodb';
 import { ObjectId } from 'mongodb';
+import dotenv from 'dotenv';
+
 
 
 //database setup
@@ -14,10 +16,12 @@ app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.static('public'));
+dotenv.config(); // Load environment variables
+
 
 
 // MongoDB Connection
-const connectionString = 'mongodb+srv://smritig395:SMR2001@cluster0.m3ajeuh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const connectionString = process.env.Database;
 const client = new MongoClient(connectionString);
 
 
