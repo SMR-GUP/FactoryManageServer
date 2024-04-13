@@ -49,10 +49,11 @@ app.post('/create', async (req, res) => {
   
     const newDocument = {
       name: req.body.name,
-      date: formatDate(req.body.joiningDate),
+      date: req.body.joiningDate,
       day: req.body.weekday,
       salary: req.body.salary
     };
+  console.log("New doc  ",newDocument);
   
     try {
       const result = await db.collection('employee').insertOne(newDocument);
