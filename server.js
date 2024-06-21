@@ -25,12 +25,13 @@ const connectionString = process.env.Database;
 const client = new MongoClient(connectionString);
 
 
+
 let db;
 
 (async () => {
   try {
     await client.connect();
-    db = client.db('ems');
+    db = client.db('factorymanage');
     console.log('Connected to MongoDB');
   } catch (error) {
     console.error('Error connecting to MongoDB:', error);
@@ -39,7 +40,6 @@ let db;
 
 // Middleware
 app.use(bodyParser.json());
-
 
 
 
